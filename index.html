@@ -125,8 +125,8 @@ layout: true
 class: center, middle, inverse
 ---
 
-# Vehículos eléctricos en Washington
-Alejandro González Barberá - Introducción a Reinforcement Learning (RL) en procesos de control
+# Introducción a Reinforcement Learning (RL) en procesos de control
+Alejandro González Barberá - 
 
 .footnote[Universidad Jaume I (UJI), Grupo Fluidos Multifásicos (GFM)]
       
@@ -164,6 +164,27 @@ layout: false
 .left-column[
   ## Introducción
   ## ¿Cómo funciona el aprendizaje por refuerzo?
+  ## Tipos de Agente
+]
+.right-column[
+
+- Q-Learning: Q-Learning es un algoritmo libre de modelo y off-policy que aprende la función Q-valor óptima para el MDP. Es una elección popular para espacios de acción discretos.
+
+- SARSA: SARSA es otro algoritmo libre de modelo y on-policy que aprende la función Q-valor. Es una elección popular para espacios de acción continuos.
+
+- Redes Neuronales Q Profundas (DQN): DQN es un algoritmo de aprendizaje por refuerzo profundo que combina Q-Learning con redes neuronales profundas para aprender una función Q-valor. DQN es particularmente útil para problemas con espacios de estado de alta dimensionalidad.
+  
+- Métodos de Gradiente de Política: Los métodos de gradiente de política son algoritmos libres de modelo que aprenden directamente la política mediante la optimización de un objetivo de rendimiento. Estos métodos son particularmente útiles para espacios de acción continuos y problemas en los que la exploración es difícil.
+  
+- Métodos Actor-Crítico: Los métodos actor-crítico combinan las ventajas de los métodos basados en el valor y los basados en la política al aprender simultáneamente tanto una función de valor como una política. Estos métodos son particularmente útiles para espacios de acción continuos.      
+
+]   
+      
+---
+.left-column[
+  ## Introducción
+  ## ¿Cómo funciona el aprendizaje por refuerzo?
+  ## Tipos de Agente
   ## Ejemplos
 ]
 .right-column[
@@ -193,9 +214,9 @@ template: inverse
       
 - Definir la función de recompensa: Establecer una función que proporcione una recompensa para cada acción tomada.
     
-- Seleccionar un algoritmo de Reinforcement Learning: Elegir un algoritmo de aprendizaje por refuerzo que se ajuste al problema.
+- Seleccionar un algoritmo de Reinforcement.
 
-- Entrenar el agente: Utilizar los datos del ambiente de simulación para entrenar el agente y ajustar su política.
+- Entrenar el agente.
       
 - Evaluar y ajustar el agente: Probar la política del agente en un ambiente distinto y ajustarla según sea necesario.
       
@@ -218,15 +239,9 @@ Reactores con depósito agitado continuo (CSTR):
       
 - El problema del reactor consiste en controlar la temperatura y la concentración de un reactor químico mediante la manipulación de las entradas del sistema.
 
-- La temperatura y la concentración son críticas para la calidad del producto y la seguridad del proceso.
-
 - La dinámica del reactor es altamente no lineal y afectada por múltiples factores, incluyendo la velocidad de flujo, la temperatura de entrada, la concentración de alimentación, entre otros.
   
-- La solución tradicional para el control del proceso se basa en controladores PID, que requieren de una buena comprensión de la dinámica del proceso y un ajuste cuidadoso de los parámetros.
-
 - El enfoque de reinforcement learning busca construir un agente que aprenda por sí mismo a controlar el proceso, sin requerir un modelo preciso del sistema ni un ajuste manual de los parámetros.
-
-- La aplicación de reinforcement learning al problema del reactor tiene el potencial de mejorar la eficiencia, la seguridad y la calidad del producto.
       
 ]
 ---
@@ -261,7 +276,7 @@ Outputs:
 
 - Se busca maximizar la concentración de producto Cc en la salida del reactor (mol/m^3).
 
-- minimizar la entrada de flujo.
+- Minimizar la entrada de flujo.
 
 - Se utiliza un agente de reinforcement learning para optimizar la salida del reactor mediante la modificación de la tasa de flujo de entrada.
   
@@ -271,11 +286,30 @@ Outputs:
 ---
 .left-column[
   ## Introducción
-  ## ¿Cómo funciona el aprendizaje por refuerzo?
-  ## Pseudocode
+  ## Deeper look
+  ## Pasos
 ]
 .right-column[
 
+Pasos seguidos en líneas generales:
+
+    Se define la clase CSTR que contiene los parámetros y las ecuaciones necesarias para simular el reactor.
+
+    Se define la función de recompensa compute_reward que se utilizará para evaluar el desempeño del agente.
+
+    Se define la función reset que se utiliza para reiniciar la simulación del reactor.
+
+    Se define la función step que se utiliza para avanzar un paso en la simulación del reactor.
+
+    Se crea una instancia de la clase CSTR y se inicializan los parámetros.
+
+    Se crea una instancia del entorno gym.Env utilizando la clase CSTR.
+
+    Se define la estructura de la red neuronal que se utilizará para aproximar la política del agente.
+
+    Se entrena el agente utilizando el algoritmo proximal policy optimization (PPO) para que aprenda a optimizar la producción del reactor.
+
+    Se realiza una simulación final utilizando el agente entrenado para evaluar su desempeño en el control del reactor.      
 
 ]   
       
@@ -283,7 +317,7 @@ Outputs:
 name: last-page
 template: inverse
 
-## CONCLUSIÓN
+## FIN
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript">
