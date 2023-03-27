@@ -21,3 +21,7 @@ donde k0 es el factor de pre-exponencial, Ea es la energía de activación, R es
 La reacción es exotérmica y libera una cantidad de calor dada por deltaH.
 
 Se desea encontrar la tasa de flujo volumétrico q óptima y las concentraciones finales de los reactivos que maximicen la producción del producto C.
+
+## Licencia
+
+Este proyecto se distribuye bajo la licencia MIT. Consulte el archivo LICENSE para más información.
