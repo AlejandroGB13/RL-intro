@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
     <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
-    <title>Electric vehicles</title>
+    <title>RL introduction</title>
     <style>
       @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -124,6 +124,160 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
+
+# Vehículos eléctricos en Washington
+Alejandro González Barberá - Introducción a Reinforcement Learning (RL) en procesos de control
+
+.footnote[Universidad Jaume I (UJI), Grupo Fluidos Multifásicos (GFM)]
+      
+---
+## ¿Qué es Reinforcement Learning?
+---
+layout: false
+.left-column[
+  ## Introducción
+]
+.right-column[
+
+- Aprendizaje por refuerzo (RL) es un tipo de aprendizaje automático donde un agente interactúa con un entorno, observando estados y recibiendo recompensas.
+
+- El objetivo del agente es aprender una política que maximice las recompensas a largo plazo.
+
+- En el contexto de Process Control, el entorno podría ser una planta de procesos y las recompensas estarían relacionadas con la eficiencia, la seguridad y la calidad del producto.
+      
+]
+---
+.left-column[
+  ## Introducción
+  ## ¿Cómo funciona el aprendizaje por refuerzo?
+]
+.right-column[
+
+- El agente interactúa con el entorno tomando acciones y observando los estados y las recompensas resultantes.
+
+- Con el tiempo, el agente aprende una política que asigna acciones a estados de manera que maximiza la recompensa a largo plazo.
+
+- El aprendizaje por refuerzo se basa en la idea de que un agente puede aprender de sus propias experiencias, sin necesidad de que se le proporcione un conjunto de datos previamente etiquetados.
+
+]   
+---
+.left-column[
+  ## Introducción
+  ## ¿Cómo funciona el aprendizaje por refuerzo?
+  ## Ejemplos
+]
+.right-column[
+
+- El aprendizaje por refuerzo se ha aplicado con éxito a una amplia variedad de problemas de Process Control.
+
+- Ejemplos incluyen control de temperatura en hornos, control de nivel en tanques de almacenamiento, y control de flujo en tuberías.
+
+- El RL se utiliza para aprender una política que ajusta automáticamente los parámetros de control en tiempo real, lo que puede llevar a mejoras significativas en la eficiencia y la calidad del producto.
+
+]   
+      
+---
+template: inverse
+
+## Workflow
+---
+      layout: false
+.left-column[
+  ## Pasos a seguir
+]
+.right-column[
+
+- Definir el problema: Identificar el problema que se quiere resolver y definir el ambiente de simulación.
+
+- Definir el espacio de estado y de acción: Seleccionar las variables que se utilizarán como estado y las acciones posibles que se pueden tomar.
+      
+- Definir la función de recompensa: Establecer una función que proporcione una recompensa para cada acción tomada.
+    
+- Seleccionar un algoritmo de Reinforcement Learning: Elegir un algoritmo de aprendizaje por refuerzo que se ajuste al problema.
+
+- Entrenar el agente: Utilizar los datos del ambiente de simulación para entrenar el agente y ajustar su política.
+      
+- Evaluar y ajustar el agente: Probar la política del agente en un ambiente distinto y ajustarla según sea necesario.
+      
+- Desplegar el agente: Implementar la política aprendida por el agente en el ambiente real y supervisar su desempeño.
+      
+]
+      
+---
+template: inverse
+
+## Toy problem
+---
+layout: false
+.left-column[
+  ## Introducción
+]
+.right-column[
+
+Reactores con depósito agitado continuo (CSTR):
+      
+- El problema del reactor consiste en controlar la temperatura y la concentración de un reactor químico mediante la manipulación de las entradas del sistema.
+
+- La temperatura y la concentración son críticas para la calidad del producto y la seguridad del proceso.
+
+- La dinámica del reactor es altamente no lineal y afectada por múltiples factores, incluyendo la velocidad de flujo, la temperatura de entrada, la concentración de alimentación, entre otros.
+  
+- La solución tradicional para el control del proceso se basa en controladores PID, que requieren de una buena comprensión de la dinámica del proceso y un ajuste cuidadoso de los parámetros.
+
+- El enfoque de reinforcement learning busca construir un agente que aprenda por sí mismo a controlar el proceso, sin requerir un modelo preciso del sistema ni un ajuste manual de los parámetros.
+
+- La aplicación de reinforcement learning al problema del reactor tiene el potencial de mejorar la eficiencia, la seguridad y la calidad del producto.
+      
+]
+---
+.left-column[
+  ## Introducción
+  ## Deeper look
+]
+.right-column[
+
+Inputs:
+
+    V: reactor volume (m^3)
+    q: volumetric flow rate (m^3/s)
+    c0: initial concentrations of the reactants [Ca0, Cb0, Cc0] (mol/m^3)
+    k0: pre-exponential factor in the Arrhenius equation (1/s)
+    Ea: activation energy (J/mol)
+    R: gas constant (J/(mol*K))
+    deltaH: heat of reaction (J/mol)
+
+Outputs:
+
+    y: concentration of the product Cc at the outlet (mol/m^3)
+      
+]   
+      
+---
+.left-column[
+  ## Introducción
+  ## Deeper look
+]
+.right-column[
+
+- Se busca maximizar la concentración de producto Cc en la salida del reactor (mol/m^3).
+
+- minimizar la entrada de flujo.
+
+- Se utiliza un agente de reinforcement learning para optimizar la salida del reactor mediante la modificación de la tasa de flujo de entrada.
+  
+- La optimización se realiza mediante la maximización de una función de recompensa que penaliza el uso excesivo de la tasa de flujo y la distancia de la concentración del producto Cc en la salida del reactor de su valor objetivo.
+      
+]   
+---
+.left-column[
+  ## Introducción
+  ## ¿Cómo funciona el aprendizaje por refuerzo?
+  ## Pseudocode
+]
+.right-column[
+
+
+]   
       
 ---
 name: last-page
