@@ -126,7 +126,7 @@ class: center, middle, inverse
 ---
 
 # Introducción a Reinforcement Learning (RL) en procesos de control
-Alejandro González Barberá - 
+Alejandro González Barberá 
 
 .footnote[Universidad Jaume I (UJI), Grupo Fluidos Multifásicos (GFM)]
       
@@ -168,15 +168,15 @@ layout: false
 ]
 .right-column[
 
-- Q-Learning: Q-Learning es un algoritmo libre de modelo y off-policy que aprende la función Q-valor óptima para el MDP. Es una elección popular para espacios de acción discretos.
+- Q-Learning: Q-Learning es un algoritmo libre de modelo y off-policy que aprende la función Q-valor óptima para el MDP. Espacios de acción discretos.
 
-- SARSA: SARSA es otro algoritmo libre de modelo y on-policy que aprende la función Q-valor. Es una elección popular para espacios de acción continuos.
+- SARSA: SARSA es otro algoritmo libre de modelo y on-policy que aprende la función Q-valor. Espacios de acción continuos.
 
-- Redes Neuronales Q Profundas (DQN): DQN es un algoritmo de aprendizaje por refuerzo profundo que combina Q-Learning con redes neuronales profundas para aprender una función Q-valor. DQN es particularmente útil para problemas con espacios de estado de alta dimensionalidad.
+- Redes Neuronales Q Profundas (DQN): DQN es un algoritmo de aprendizaje por refuerzo profundo que combina Q-Learning con redes neuronales profundas para aprender una función Q-valor. Espacios de estado de alta dimensionalidad.
   
-- Métodos de Gradiente de Política: Los métodos de gradiente de política son algoritmos libres de modelo que aprenden directamente la política mediante la optimización de un objetivo de rendimiento. Estos métodos son particularmente útiles para espacios de acción continuos y problemas en los que la exploración es difícil.
+- Métodos de Gradiente de Política: Los métodos de gradiente de política son algoritmos libres de modelo que aprenden directamente la política mediante la optimización de un objetivo de rendimiento. Espacios de acción continuos y problemas en los que la exploración es difícil.
   
-- Métodos Actor-Crítico: Los métodos actor-crítico combinan las ventajas de los métodos basados en el valor y los basados en la política al aprender simultáneamente tanto una función de valor como una política. Estos métodos son particularmente útiles para espacios de acción continuos.      
+- Métodos Actor-Crítico: Los métodos actor-crítico combinan las ventajas de los métodos basados en el valor y los basados en la política al aprender simultáneamente tanto una función de valor como una política. Espacios de acción continuos.      
 
 ]   
       
@@ -293,23 +293,23 @@ Outputs:
 
 Pasos seguidos en líneas generales:
 
-    Se define la clase CSTR que contiene los parámetros y las ecuaciones necesarias para simular el reactor.
+- Se define la clase CSTR que contiene los parámetros y las ecuaciones necesarias para simular el reactor.
 
-    Se define la función de recompensa compute_reward que se utilizará para evaluar el desempeño del agente.
+- Se define la función de recompensa compute_reward que se utilizará para evaluar el desempeño del agente.
 
-    Se define la función reset que se utiliza para reiniciar la simulación del reactor.
+- Se define la función reset que se utiliza para reiniciar la simulación del reactor.
 
-    Se define la función step que se utiliza para avanzar un paso en la simulación del reactor.
+- Se define la función step que se utiliza para avanzar un paso en la simulación del reactor.
 
-    Se crea una instancia de la clase CSTR y se inicializan los parámetros.
+- Se crea una instancia de la clase CSTR y se inicializan los parámetros.
 
-    Se crea una instancia del entorno gym.Env utilizando la clase CSTR.
+- Se crea una instancia del entorno gym.Env utilizando la clase CSTR.
 
-    Se define la estructura de la red neuronal que se utilizará para aproximar la política del agente.
+- Se define la estructura de la red neuronal que se utilizará para aproximar la política del agente.
 
-    Se entrena el agente utilizando el algoritmo proximal policy optimization (PPO) para que aprenda a optimizar la producción del reactor.
+- Se entrena el agente utilizando el algoritmo proximal policy optimization (PPO) para que aprenda a optimizar la producción del reactor.
 
-    Se realiza una simulación final utilizando el agente entrenado para evaluar su desempeño en el control del reactor.      
+- Se realiza una simulación final utilizando el agente entrenado para evaluar su desempeño en el control del reactor.      
 
 ]   
       
